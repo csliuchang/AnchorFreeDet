@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Set
 from detectron2.data import build_detection_train_loader
 from detectron2.evaluation import COCOEvaluator, verify_results
 from detectron2.engine import DefaultTrainer,  default_setup, launch
-from defaults import default_argument_parser
+from hyp import anchor_free_argument_parser
 import torch
 import detectron2.utils.comm as comm
 from detectron2.checkpoint import DetectionCheckpointer
@@ -133,7 +133,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    args = default_argument_parser().parse_args()
+    args = anchor_free_argument_parser().parse_args()
     print("Command Line Args:", args)
     launch(
         main,

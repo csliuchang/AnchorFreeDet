@@ -10,7 +10,7 @@ python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 
 ### train 
 ```
-python3 train_net.py --config-file [your config file] --model [your model]
+python3 train_net.py --config-file [your config file] --models [your model]
 ```
 
 ### eval

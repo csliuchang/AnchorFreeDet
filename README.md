@@ -8,17 +8,17 @@ first, you need to install detectron2
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
 
-###train 
+### train 
 ```
 python3 train_net.py --config-file [your config file] --model [your model]
 ```
 
-###eval
+### eval
 
 
-Reference
+Reference:
 https://github.com/PeizeSun/SparseR-CNN
-https://github.com/csliuchang/detectron2
+https://github.com/facebookresearch/detectron2
 https://github.com/aim-uofa/AdelaiDet
 https://github.com/JDAI-CV/centerX
 https://github.com/PeizeSun/OneNet

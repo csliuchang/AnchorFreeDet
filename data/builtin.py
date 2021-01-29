@@ -11,7 +11,7 @@ def register_all_coco_class(root):
          ["balloon",]),
         ("balloon_val",
          "datasets/balloon/annotations/instances_val.json",
-         "datasets/balloon/train/",
+         "datasets/balloon/val/",
          ["balloon",]),
         ("coco_car_train",
          "datasets/coco/annotations/instances_train2017.json",

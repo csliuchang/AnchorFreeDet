@@ -2,6 +2,10 @@
 
 
 for honest, I am just begin this github, and i will compete it soon
+### whats coming soon
+1. augment papeline  
+2. center fcos detr   
+3. rotation methods: DAL BBA
 
 first, you need to install detectron2
 ```

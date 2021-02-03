@@ -12,9 +12,9 @@ first, you need to install detectron2
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
 
-####[\(^o^)/~] support sparse-rcnn
-####[ ] support centernet
-####[\(^o^)/~] support onenet
+#### support sparse-rcnn
+#### support centernet
+#### support onenet
 
 ### train 
 ```
@@ -27,7 +27,7 @@ python train_net.py --num-gpus 1 --config-file [your config file] --model [your 
                     --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
-###Use tensorboard 
+### Use tensorboard
 ```
 cd [outputdir]
 tensorboard --logdir=[outputdir]

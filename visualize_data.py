@@ -13,15 +13,18 @@ from detectron2.data import MetadataCatalog, DatasetCatalog
 
 from detectron2.data.datasets import register_coco_instances
 
-register_coco_instances('self_coco_train', {},
-                        '//anchor_free/datasets/balloon/annotations/instances_train.json',
-                       '/home/changliu/PycharmProjects/AnchorFreeDet/anchor_free/datasets/balloon/train')
-register_coco_instances('self_coco_val', {},
-                        '//anchor_free/datasets/balloon/annotations/instances_val.json',
-                       '/home/changliu/PycharmProjects/AnchorFreeDet/anchor_free/datasets/balloon/val')
+"""
+add your dataset path 
+"""
+register_coco_instances('self_balloon_train', {},
+                        './datasets/balloon/annotations/instances_train.json',
+                       './datasets/balloon/train')
+register_coco_instances('self_balloon_val', {},
+                        '/home/changliu/PycharmProjects/SparseR-CNN/output/inference/coco_instances_results.json',
+                       './datasets/balloon/val')
 
-coco_val_metadata = MetadataCatalog.get("self_coco_val")
-dataset_dicts = DatasetCatalog.get("self_coco_val")
+coco_val_metadata = MetadataCatalog.get("self_balloon_train")
+dataset_dicts = DatasetCatalog.get("self_balloon_train")
 
 
 import random

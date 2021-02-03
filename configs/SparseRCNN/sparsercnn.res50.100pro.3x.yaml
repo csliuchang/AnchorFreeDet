@@ -1,6 +1,6 @@
 _BASE_: "Base-SparseRCNN.yaml"
 MODEL:
-  WEIGHTS: "detectron2://ImageNetPretrained/torchvision/R-50.pkl"
+  WEIGHTS: "/home/changliu/PycharmProjects/paths/r50_100pro_3x_model.pth"
   RESNETS:
     DEPTH: 50
     STRIDE_IN_1X1: False
@@ -8,8 +8,8 @@ MODEL:
     NUM_PROPOSALS: 100
     NUM_CLASSES: 1
 DATASETS:
-  TRAIN: ("coco_2017_train",)
-  TEST:  ("coco_2017_val",)
+  TRAIN: ("balloon_train",)
+  TEST:  ("balloon_val",)
 SOLVER:
   STEPS: (210000, 250000)
   MAX_ITER: 270000

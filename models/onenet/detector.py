@@ -79,7 +79,6 @@ class OneNet(nn.Module):
         self.normalizer = lambda x: (x - pixel_mean) / pixel_std
         self.to(self.device)
 
-
     def forward(self, batched_inputs):
         """
         Args:
@@ -145,7 +144,7 @@ class OneNet(nn.Module):
             image_size_xyxy = torch.as_tensor([w, h, w, h], dtype=torch.float, device=self.device)
             gt_classes = targets_per_image.gt_classes
             gt_boxes = targets_per_image.gt_boxes.tensor / image_size_xyxy
-            gt_boxes = box_xyxy_to_cxcywh(gt_boxes)
+            gt_boxes = box_xyxy_to_cxcywh(gt_boxes) # todo change the boxes
             target["labels"] = gt_classes.to(self.device)
             target["boxes"] = gt_boxes.to(self.device)
             target["boxes_xyxy"] = targets_per_image.gt_boxes.tensor.to(self.device)

@@ -38,3 +38,10 @@ def add_onenet_config(cfg):
     # Optimizer.
     cfg.SOLVER.OPTIMIZER = "ADAMW"
     cfg.SOLVER.BACKBONE_MULTIPLIER = 1.0
+    cfg.SOLVER.TRAIN_PIPELINES = [
+        ("CenterAffine", dict(boarder=128, output_size=(512, 512), random_aug=True)),
+        ("RandomBrightness", dict(intensity_min=0.6, intensity_max=1.4)),
+        ("RandomContrast", dict(intensity_min=0.6, intensity_max=1.4)),
+        ("RandomSaturation", dict(intensity_min=0.6, intensity_max=1.4)),
+        ("RandomLighting", dict(scale=0.1)),
+    ]

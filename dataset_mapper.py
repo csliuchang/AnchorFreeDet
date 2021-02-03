@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 from detectron2.data import detection_utils as utils
-from detectron2.data import transforms as T
+from data import transforms as T
 from detectron2.data.transforms import TransformGen
 
 __all__ = ["BaseDatasetMapper"]
@@ -36,6 +36,11 @@ def build_transform_gen(cfg, is_train):
     logger = logging.getLogger(__name__)
     tfm_gens = []
     if is_train:
+        for (aug, args) in cfg.SOLVER.TRAIN_PIPELINES:
+            tfm_gens.append(getattr(T, aug)(**args))
+    else:
+        for (aug, args) in cfg.MODEL.CENTERNET.TEST_PIPELINES:
+            tfm_gens.append(getattr(T, aug)(**args))
         tfm_gens.append(T.RandomFlip())
     tfm_gens.append(T.ResizeShortestEdge(min_size, max_size, sample_style))
     if is_train:

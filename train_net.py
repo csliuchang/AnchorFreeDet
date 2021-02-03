@@ -1,7 +1,7 @@
 import os
 import itertools
 from typing import Any, Dict, List, Set
-from detectron2.data import build_detection_train_loader
+from detectron2.data import build_detection_train_loader,build_detection_test_loader
 from detectron2.evaluation import COCOEvaluator, verify_results
 from detectron2.engine import DefaultTrainer,  default_setup, launch
 from hyp import anchor_free_argument_parser
@@ -14,12 +14,19 @@ from detectron2.solver.build import maybe_add_gradient_clipping
 
 from models.sparsercnn import add_sparsercnn_config
 from models.onenet import add_onenet_config
-
+from models.centernet import add_centernet_config
 from dataset_mapper import BaseDatasetMapper
-from data.builtin import register_all_coco_class
+from detectron2.data.datasets import register_coco_instances
+from detectron2.data import MetadataCatalog
 
-_root = os.getenv("DETECTRON2_DATASETS", "datasets")
-register_all_coco_class(_root)
+register_coco_instances("balloon_train", {},
+                        "datasets/balloon/annotations/instances_train.json",
+                        "datasets/balloon/train/")
+register_coco_instances("balloon_val", {},
+                        "datasets/balloon/annotations/instances_val.json",
+                        "datasets/balloon/val/")
+MetadataCatalog.get("balloon_train").thing_classes = ['balloon']
+MetadataCatalog.get("balloon_val").thing_classes = ['balloon']
 
 
 class Trainer(DefaultTrainer):
@@ -107,6 +114,8 @@ def setup(args):
         add_sparsercnn_config(cfg)
     elif args.models == 'onenet':
         add_onenet_config(cfg)
+    elif args.models == 'centernet':
+        add_centernet_config(cfg)
     else:
         pass
     cfg.merge_from_file(args.config_file)

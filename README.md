@@ -12,13 +12,26 @@ first, you need to install detectron2
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
 
+####[\(^o^)/~] support sparse-rcnn
+####[ ] support centernet
+####[\(^o^)/~] support onenet
+
 ### train 
 ```
 python3 train_net.py --config-file [your config file] --models [your model]
 ```
 
 ### eval
+```
+python train_net.py --num-gpus 1 --config-file [your config file] --model [your model]/ 
+                    --eval-only MODEL.WEIGHTS path/to/model.pth
+```
 
+###Use tensorboard 
+```
+cd [outputdir]
+tensorboard --logdir=[outputdir]
+```
 
 Reference:  
 https://github.com/PeizeSun/SparseR-CNN  

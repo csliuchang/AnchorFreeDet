@@ -25,7 +25,7 @@ python3 train_net.py --num-gpus 1 --config-file [your config file] --model [your
 python train_net.py --num-gpus 1 --config-file [your config file] --model [your model]/ 
                     --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
-###Use tensorboard 
+### Use tensorboard 
 ```
 cd [outputdir]
 tensorboard --logdir=[outputdir]

@@ -54,11 +54,14 @@ centernet
 | res50 + augment        |                  |                 |         |
 
 
-Reference:  
-https://github.com/PeizeSun/SparseR-CNN  
-https://github.com/facebookresearch/detectron2  
-https://github.com/aim-uofa/AdelaiDet  
-https://github.com/JDAI-CV/centerX  
-https://github.com/PeizeSun/OneNet  
+### Reference:  
++ [SparseRCNN](https://github.com/PeizeSun/SparseR-CNN)  
++ [detectron2](https://github.com/facebookresearch/detectron2)  
++ [AdelaiDet](https://github.com/aim-uofa/adet) some detection methods including FCOS, BlendMask
++ [CenterNet](https://github.com/JDAI-CV/centerX)  
++ [OneNet](https://github.com/PeizeSun/OneNet), keypoint detection 
++ [Res2Net backbones](https://github.com/Res2Net/Res2Net-detectron2)
++ [VoVNet backbones](https://github.com/youngwanLEE/vovnet-detectron2)
+
 
 

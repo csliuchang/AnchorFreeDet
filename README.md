@@ -57,7 +57,7 @@ centernet
 ### Reference:  
 + [SparseRCNN](https://github.com/PeizeSun/SparseR-CNN)  
 + [detectron2](https://github.com/facebookresearch/detectron2)  
-+ [AdelaiDet](https://github.com/aim-uofa/adet) some detection methods including FCOS, BlendMask
++ [AdelaiDet](https://github.com/aim-uofa/adet) , some detection methods including FCOS, BlendMask
 + [CenterNet](https://github.com/JDAI-CV/centerX)  
 + [OneNet](https://github.com/PeizeSun/OneNet), keypoint detection 
 + [Res2Net backbones](https://github.com/Res2Net/Res2Net-detectron2)

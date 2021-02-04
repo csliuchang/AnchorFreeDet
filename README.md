@@ -30,7 +30,7 @@ python train_net.py --num-gpus 1 --config-file [your config file] --model [your 
 cd [outputdir]
 tensorboard --logdir=[outputdir]
 ```
-SparseRCNN
+#### SparseRCNN
 
 | Backbone                 |   AP balloon    |  AP IOU=0.5    | inference time |
 | ----------------         | ---------------- | -------------- | ----- |
@@ -38,7 +38,7 @@ SparseRCNN
 | res50 + augment        |                  |                 |        |
 | res50 + coco_pretrained| 80.3             |     89.1        |       | 
 
-OneNet 
+#### OneNet 
 
 | Backbone                 |   AP balloon    |  AP IOU=0.5    | inference time |
 | ----------------         | ---------------- | -------------- | ----- |
@@ -46,7 +46,7 @@ OneNet
 | res50 + augment        |                  |                 |        |
 | res50 + coco_pretrained|                  |                 |       | 
 
-centernet
+#### centernet
 
 | Backbone                 |   AP balloon    |  AP IOU=0.5    | inference time |
 | ----------------         | ---------------- | -------------- | ----- |

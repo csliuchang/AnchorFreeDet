@@ -48,15 +48,15 @@ tensorboard --logdir=[outputdir]
 
 #### OneNet 
 
-| Backbone                 |   AP balloon    |  AP IOU=0.5    | inference time |
+| Backbone                 |   AP   |   AP50   | FPS |
 | ----------------         | ---------------- | -------------- | ----- |
-| res50                  | 48.2            |      64.8          |        |
+| res50                  | 48.2            |      64.8          |    30    |
 | res50 + augment        |                  |                 |        |
 | res50 + coco_pretrained|                  |                 |       | 
 
 #### centernet
 
-| Backbone                 |   AP balloon    |  AP IOU=0.5    | inference time |
+| Backbone                 |   AP    |   AP50    | FPS |
 | ----------------         | ---------------- | -------------- | ----- |
 | res50                  | 42.1            |      65.1          |        |
 | res50 + augment        |                  |                 |         |

@@ -31,12 +31,20 @@ cd [outputdir]
 tensorboard --logdir=[outputdir]
 ```
 #### SparseRCNN
+##### balloon
 
-| Backbone                 |   AP balloon    |  AP IOU=0.5    | FPS |
+| Backbone                 |   AP    |  AP50  | FPS |
 | ----------------         | ---------------- | -------------- | ----- |
-| res50                  | 42.3             |     53.2            |     12    |   
-| res50 + augment        |         50.0         |    58.2             |    12   |
+| res50 +2e-5+ADAMW            | 42.3             |     53.2            |     12    |   
+| res50 + augment+2e-5+ADAMW   |         50.0         |    58.2             |    12   |
+| res50 + augment+1e-4+ADAMW     |         56.0         |    68.9             |    12   |
 | res50 + coco_pretrained| 80.3             |     89.1        |    12   | 
+##### Bead
+| Backbone                 |   AP    |  AP50    | FPS |
+| ----------------         | ---------------- | -------------- | ----- |
+| res50                  |   19.4       |      57.7         |    10    |
+
+
 
 #### OneNet 
 

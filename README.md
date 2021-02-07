@@ -34,7 +34,7 @@ tensorboard --logdir=[outputdir]
 
 | Backbone                 |   AP balloon    |  AP IOU=0.5    | FPS |
 | ----------------         | ---------------- | -------------- | ----- |
-| res50                  | 42.3             |     53.2          |        |      12 |
+| res50                  | 42.3             |     53.2          |        |      12  |
 | res50 + augment        |         50.0         |    58.2             |    12   |
 | res50 + coco_pretrained| 80.3             |     89.1        |    12   | 
 

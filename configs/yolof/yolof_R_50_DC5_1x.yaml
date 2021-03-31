@@ -12,4 +12,6 @@ MODEL:
     MATCHER:
       TOPK: 8
     POS_IGNORE_THRESHOLD: 0.1
+TEST:
+  EVAL_PERIOD: 50
 OUTPUT_DIR: "output/yolof/R_50_DC5_1x"

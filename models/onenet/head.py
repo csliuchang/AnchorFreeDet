@@ -23,6 +23,7 @@ from detectron2.modeling.poolers import ROIPooler, cat
 from detectron2.structures import Boxes
 from .deconv import CenternetDeconv
 
+
 class Head(nn.Module):
 
     def __init__(self, cfg, backbone_shape=[2048, 1024, 512, 256]):
@@ -56,8 +57,7 @@ class Head(nn.Module):
                 nn.init.xavier_uniform_(p)
 
             # initialize the bias for focal loss.
-            if p.shape[-1] == self.num_classes:
-                nn.init.constant_(p, self.bias_value)
+        nn.init.constant_(self.cls_score.bias, self.bias_value)
     
     def forward(self, features_list):
         

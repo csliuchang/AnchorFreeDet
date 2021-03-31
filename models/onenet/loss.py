@@ -40,7 +40,6 @@ class SetCriterion(nn.Module):
         self.focal_loss_alpha = cfg.MODEL.OneNet.ALPHA
         self.focal_loss_gamma = cfg.MODEL.OneNet.GAMMA
 
-
     def loss_labels(self, outputs, targets, indices, num_boxes, log=False):
         """Classification loss (NLL)
         targets dicts must contain the key "labels" containing a tensor of dim [nb_target_boxes]
@@ -77,7 +76,6 @@ class SetCriterion(nn.Module):
             # TODO this should probably be a separate loss, not hacked in this one here
             losses['class_error'] = 100 - accuracy(src_logits[idx], target_classes_o)[0]
         return losses
-
 
     def loss_boxes(self, outputs, targets, indices, num_boxes):
         """Compute the losses related to the bounding boxes, the L1 regression loss and the GIoU loss

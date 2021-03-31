@@ -14,6 +14,7 @@ python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 #### [·] support sparse-rcnn
 #### [·] support centernet
 #### [·] support onenet
+#### [·] support yolof
 
 ### train 
 ```

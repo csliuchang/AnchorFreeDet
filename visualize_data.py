@@ -20,11 +20,11 @@ register_coco_instances('self_balloon_train', {},
                         './datasets/balloon/annotations/instances_train.json',
                        './datasets/balloon/train')
 register_coco_instances('self_balloon_val', {},
-                        '/home/changliu/PycharmProjects/SparseR-CNN/output/inference/coco_instances_results.json',
+                        './datasets/balloon/annotations/instances_val.json',
                        './datasets/balloon/val')
 
-coco_val_metadata = MetadataCatalog.get("self_balloon_train")
-dataset_dicts = DatasetCatalog.get("self_balloon_train")
+coco_val_metadata = MetadataCatalog.get("self_balloon_val")
+dataset_dicts = DatasetCatalog.get("self_balloon_val")
 
 
 import random

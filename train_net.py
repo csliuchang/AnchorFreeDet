@@ -12,21 +12,23 @@ from detectron2.config import get_cfg
 
 from detectron2.solver.build import maybe_add_gradient_clipping
 
+from detectron2.data import catalog
 from models.sparsercnn import add_sparsercnn_config
 from models.onenet import add_onenet_config
 from models.centernet import add_centernet_config
+from models.yolof import add_yolof_config
 from dataset_mapper import BaseDatasetMapper
 from detectron2.data.datasets import register_coco_instances
 from detectron2.data import MetadataCatalog
 
-register_coco_instances("balloon_train", {},
-                        "datasets/balloon/annotations/instances_train.json",
-                        "datasets/balloon/train/")
-register_coco_instances("balloon_val", {},
-                        "datasets/balloon/annotations/instances_val.json",
-                        "datasets/balloon/val/")
-MetadataCatalog.get("balloon_train").thing_classes = ['balloon']
-MetadataCatalog.get("balloon_val").thing_classes = ['balloon']
+register_coco_instances("hci_train", {},
+                        "datasets/hci/annotations/instances_train.json",
+                        "datasets/hci/train/")
+register_coco_instances("hci_val", {},
+                        "datasets/hci/annotations/instances_val.json",
+                        "datasets/hci/val/")
+MetadataCatalog.get("hci_train").thing_classes = ['bad']
+MetadataCatalog.get("hci_val").thing_classes = ['bad']
 
 
 class Trainer(DefaultTrainer):
@@ -116,6 +118,8 @@ def setup(args):
         add_onenet_config(cfg)
     elif args.models == 'centernet':
         add_centernet_config(cfg)
+    elif args.models == 'yolof':
+        add_yolof_config(cfg)
     else:
         pass
     cfg.merge_from_file(args.config_file)
